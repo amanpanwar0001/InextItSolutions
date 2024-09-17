@@ -1,111 +1,4 @@
-  /* *{
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
- }
- .logo{
-      display:flex ;
-      justify-content: center;
-      align-items: center;
-      height: 90px;
- }
- .logo img{
-      height:250px;
-      margin-top: 40px;
- }
- .text{
-      display: flex;
-      justify-content: center;
-      font-size: large;
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 20px;
- }
- .container{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
- }
- .footer{
-     width: 1200px;
-     padding: 100px;
-     text-align: center;
- }
- .footer h2{
-     color: red;
-     font-weight: 600;
-     padding: 20px;
- }
- .footer p{
-     line-height: 1.5rem;
- }
- .footer h5{
-     margin-top: 20px;
-     line-height: 1.5rem;
- }
- .inner-container{
-      width: 1200px;
-      
- }
- .inner-container1{
-     width: 1200px;
-     display: flex;
-     
-}
- .container2{
-     border: 1px solid #ddd;
-     max-width: 380px;
-     height: 134.6vh;
-     margin: auto;
-     display: flex;
-    flex-direction: column;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
- }
-.header{
-     padding: 20px;
-     max-width: 380px;
-     background: #f7f7f7;
-     border-bottom: 1px solid #ddd;
-}
-.content{
-     padding: 20px;
-}
-.content1{
-     height: 19rem;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-
-}
-.content1 h2{
-     margin-bottom: 10px ;
-}
-.content p{
-     font-size: 0.9rem;
-     line-height: 1.9rem;
-}
-
-
-
-
-
- .inner-container h1{
-      margin-top: 30px;
- }
- .inner-container h2{
-      margin-top: 40px;
-      font-weight:400;
- }
- .inner-container p{
-      margin-top: 15px;
-      font-size: medium;
- } 
-
-
-  
-  */
+ 
 
   /* General Reset */
 * {
@@ -141,6 +34,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.heading2{
+    margin-top: 20px;
 }
 
 /* Footer Styling */
@@ -238,7 +134,7 @@
 }
 form{
     border: 1.6px solid red;
-    box-shadow: 0px 0px 5px 0px;
+    /* box-shadow: 0px 0px 5px 0px; */
     padding: 40px;
     margin-top: 60px;
     border-radius: 10px;

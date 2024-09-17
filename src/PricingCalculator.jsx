@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./pricing.css";
 import { LiaCopyright } from "react-icons/lia";
 import emailjs from 'emailjs-com'; // Import EmailJS SDK
-import logo from './assets/logo.jpg'; // Import the image
+import logo from './assets/logo2.png'; // Import the image
 
 const PricingCalculator = () => {
   const [addOns, setAddOns] = useState({

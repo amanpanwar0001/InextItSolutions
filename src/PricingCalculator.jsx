@@ -3,7 +3,7 @@ import "./pricing.css";
 import { LiaCopyright } from "react-icons/lia";
 import emailjs from 'emailjs-com'; // Import EmailJS SDK
 
-const Fake = () => {
+const PricingCalculator = () => {
   const [addOns, setAddOns] = useState({
     RemovePostProduction: false,
     teleprompter: false,
@@ -456,4 +456,4 @@ const Fake = () => {
   );
 };
 
-export default Fake;
+export default PricingCalculator;

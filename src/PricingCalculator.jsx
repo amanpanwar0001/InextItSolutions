@@ -195,7 +195,7 @@ const PricingCalculator = () => {
   return (
     <>
       <div className="logo">
-        <img src="./src/logo2.png" alt="inext" />
+        <img src="./src/logo.jpg" alt="inext" />
       </div>
       <div className="text">
         <h1>MENU</h1>

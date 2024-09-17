@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "./pricing.css";
 import { LiaCopyright } from "react-icons/lia";
 import emailjs from 'emailjs-com'; // Import EmailJS SDK
+import logo from './assets/logo.jpg'; // Import the image
 
 const PricingCalculator = () => {
   const [addOns, setAddOns] = useState({
@@ -195,7 +196,7 @@ const PricingCalculator = () => {
   return (
     <>
       <div className="logo">
-        <img src="./src/logo.jpg" alt="inext" />
+      <img src={logo} alt="inext" />
       </div>
       <div className="text">
         <h1>MENU</h1>

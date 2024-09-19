@@ -188,6 +188,12 @@ const PricingCalculator = () => {
         console.log("Failed to send email:", error.text);
       });
   };
+
+  const Click=()=>{
+    alert('Details Submitted Succesfully....!')
+  }
+
+  
   
   
 
@@ -268,7 +274,7 @@ const PricingCalculator = () => {
           </h2>
         </div>
       </div>
-      <div className="container">
+      <div className="container1">
         <div className="inner-container1">
           <div className="container2">
             <div className="header">
@@ -442,7 +448,7 @@ const PricingCalculator = () => {
     </label>
   </div>
   
-  <button type="submit">Submit Form</button>
+  <button type="submit" onClick={()=>Click()}>Submit Form</button>
 </form>
 
         </div>
@@ -458,3 +464,7 @@ const PricingCalculator = () => {
 };
 
 export default PricingCalculator;
+
+
+
+ 

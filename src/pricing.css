@@ -34,6 +34,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* color: black; */
+}
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
 }
 .heading2{
     margin-top: 20px;
@@ -45,6 +52,7 @@
     max-width: 1200px;
     padding: 50px;
     text-align: center;
+    color: #ddd;
 }
 
 .footer h2 {
@@ -81,14 +89,15 @@
     display: flex;
     flex-direction: column;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* border-radius: 30px; */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .header {
     padding: 20px;
     background: #f7f7f7;
     border-bottom: 1px solid #ddd;
+   
 }
 
 .content {
@@ -131,6 +140,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    color: #ddd;
 }
 form{
     border: 1.6px solid red;

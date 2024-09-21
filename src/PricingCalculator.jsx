@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import "./pricing.css";
 import { LiaCopyright } from "react-icons/lia";
-import emailjs from 'emailjs-com'; // Import EmailJS SDK
-import logo from './assets/logo2.png'; // Import the image
+import emailjs from "emailjs-com"; // Import EmailJS SDK
+import logo from "./assets/logo2.png"; // Import the image
 
 const PricingCalculator = () => {
   const [addOns, setAddOns] = useState({
@@ -122,41 +122,50 @@ const PricingCalculator = () => {
 
   const form = useRef();
 
-
   const sendEmail = (e) => {
     e.preventDefault();
-    
+
     // Collect the form data
     const formData = new FormData(form.current);
     const formProps = Object.fromEntries(formData.entries());
-    
+
     // Create a summary of selected add-ons for each package
     const selectedAddOns = {
-      Basic: Object.keys(addOns).filter(key => addOns[key]).join(", "),
-      Professional: Object.keys(secondAdd).filter(key => secondAdd[key]).join(", "),
-      Premium: Object.keys(thirdAdd).filter(key => thirdAdd[key]).join(", ")
+      Basic: Object.keys(addOns)
+        .filter((key) => addOns[key])
+        .join(", "),
+      Professional: Object.keys(secondAdd)
+        .filter((key) => secondAdd[key])
+        .join(", "),
+      Premium: Object.keys(thirdAdd)
+        .filter((key) => thirdAdd[key])
+        .join(", "),
     };
-    
+
     // Determine which package is selected
     const selectedPackage = formProps.package_type; // Ensure this field is part of your form
-    
+
     let packageDetails;
     let packageTotal;
     let addOnsList;
-    
+
     switch (selectedPackage) {
       case "Basic":
-        packageDetails = "Selected Basic Package Add-Ons: " + selectedAddOns.Basic;
+        packageDetails =
+          "Selected Basic Package Add-Ons: " + selectedAddOns.Basic;
         packageTotal = calculateTotal();
         addOnsList = selectedAddOns.Basic;
         break;
       case "Professional":
-        packageDetails = "Selected Professional Package Add-Ons: " + selectedAddOns.Professional;
+        packageDetails =
+          "Selected Professional Package Add-Ons: " +
+          selectedAddOns.Professional;
         packageTotal = calculateTotal1();
         addOnsList = selectedAddOns.Professional;
         break;
       case "Premium":
-        packageDetails = "Selected Premium Package Add-Ons: " + selectedAddOns.Premium;
+        packageDetails =
+          "Selected Premium Package Add-Ons: " + selectedAddOns.Premium;
         packageTotal = calculateTotal2();
         addOnsList = selectedAddOns.Premium;
         break;
@@ -165,7 +174,7 @@ const PricingCalculator = () => {
         packageTotal = 0;
         addOnsList = "None";
     }
-    
+
     // Construct the email content
     const emailContent = `
       Name: ${formProps.from_name}\n
@@ -174,46 +183,39 @@ const PricingCalculator = () => {
       ${packageDetails}\n
       TOTAL ${selectedPackage.toUpperCase()}: ${packageTotal}\n
     `;
-    
+
     // Send the email
     emailjs
-      .send('service_ew4dphz', 'template_trxb8zl', {
-        from_name: formProps.from_name,
-        from_email: formProps.from_email,
-        message: emailContent
-      }, 'JarB-0qJ360Q5T0bU')
-      .then(() => {
-        console.log("Email sent successfully");
-      }, (error) => {
-        console.log("Failed to send email:", error.text);
-      });
+      .send(
+        "service_ew4dphz",
+        "template_trxb8zl",
+        {
+          from_name: formProps.from_name,
+          from_email: formProps.from_email,
+          message: emailContent,
+        },
+        "JarB-0qJ360Q5T0bU"
+      )
+      .then(
+        () => {
+          console.log("Email sent successfully");
+        },
+        (error) => {
+          console.log("Failed to send email:", error.text);
+        }
+      );
   };
 
-  const Click=()=>{
-    alert('Details Submitted Succesfully....!')
-  }
-
-  
-  
-  
-
-   
+  const Click = () => {
+    alert("Details Submitted Succesfully....!");
+  };
 
   return (
     <>
-      <div className="logo">
-      <img src={logo} alt="inext" />
-      </div>
-      <div className="text">
-        <h1>MENU</h1>
-      </div>
       <div className="container">
         <div className="inner-container">
-          <h1 className="heading" style={{ textAlign: "center" }}>
-            Corporate Videos{" "}
-            <span className="heading" style={{ color: "red" }}>
-              Production Services
-            </span>
+          <h1 className="heading" style={{ textAlign: "center", color: "red" }}>
+            Corporate Videos Production Services
           </h1>
           <h2 className="heading2" style={{ color: "red", fontWeight: "600" }}>
             Welcome to I Next IT Solutions
@@ -227,7 +229,7 @@ const PricingCalculator = () => {
           <h2 className="heading2" style={{ color: "red", fontWeight: "600" }}>
             Why Choose Our Corporate Video Production?
           </h2>
-          <h2>Professional Quality:</h2>
+          <h3>Professional Quality:</h3>
           <p>
             Our team of experienced videographers and editors uses
             state-of-the-art equipment to ensure your corporate video meets the
@@ -235,7 +237,7 @@ const PricingCalculator = () => {
             focus on every detail to deliver a polished final product.
           </p>
 
-          <h2>Customized Solutions:</h2>
+          <h3>Customized Solutions:</h3>
           <p>
             We understand that each business has unique needs. Our approach is
             tailored to fit your specific goals, whether it's showcasing company
@@ -244,7 +246,7 @@ const PricingCalculator = () => {
             brand's voice and vision.
           </p>
 
-          <h2>Comprehensive Services:</h2>
+          <h3>Comprehensive Services:</h3>
           <p>
             From concept development and scriptwriting to filming and
             post-production, we handle every aspect of video production. Our
@@ -252,14 +254,14 @@ const PricingCalculator = () => {
             that exceeds expectations.
           </p>
 
-          <h2>Engaging Content:</h2>
+          <h3>Engaging Content:</h3>
           <p>
             Our creative team excels at creating videos that captivate and
             retain viewer attention. We use storytelling techniques and engaging
             visuals to make sure your message resonates with your target
             audience.
           </p>
-          <h2>Timely Delivery:</h2>
+          <h3>Timely Delivery:</h3>
           <p>
             We value your time and understand the importance of deadlines. Our
             efficient production process ensures that your video is delivered on
@@ -313,10 +315,8 @@ const PricingCalculator = () => {
                       type="checkbox"
                       id={key}
                       checked={addOns[key]}
-
                       onChange={handleAddOnChange}
                       style={{ marginLeft: "10px" }}
-                       
                     />
                   </div>
                 ))}
@@ -392,7 +392,9 @@ const PricingCalculator = () => {
               <p>Professional editing</p>
               <p>Color grading in DaVinci Resolve</p>
               <p>Premium music and AI sound mastering</p>
-              <p>Dedicated sound recordist with professional cinema equipment</p>
+              <p>
+                Dedicated sound recordist with professional cinema equipment
+              </p>
               <p>Professional TimeCode work flow</p>
               <p>Dedicated hard drive with raw footage</p>
               <p>Final video duration up to 5 minutes</p>
@@ -424,47 +426,74 @@ const PricingCalculator = () => {
           </div>
         </div>
         <div>
-          
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="input-fields">
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Your name"
+                required
+              />
+              <input
+                type="email"
+                name="from_email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
 
-<form ref={form} onSubmit={sendEmail}>
-  <div className="input-fields">
-  <input type="text" name="from_name" placeholder="Your name" required/> 
-  <input type="email" name="from_email" placeholder="Your Email" required/>
-  <textarea name="message" placeholder="Message" required></textarea>
-  </div>
-  
-  <div className="package-fields">
-    <label className="radio-container">
-      <input type="radio" name="package_type" value="Basic" required />
-      Basic Package
-    </label>
-    <label>
-      <input type="radio" name="package_type" value="Professional" required />
-      Professional Package
-    </label>
-    <label>
-      <input type="radio" name="package_type" value="Premium" required />
-      Premium Package
-    </label>
-  </div>
-  
-  <button type="submit" onClick={()=>Click()}>Submit Form</button>
-</form>
+            <div className="package-fields">
+              <label className="radio-container">
+                <input
+                  type="radio"
+                  name="package_type"
+                  value="Basic"
+                  required
+                />
+                Basic Package
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="package_type"
+                  value="Professional"
+                  required
+                />
+                Professional Package
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="package_type"
+                  value="Premium"
+                  required
+                />
+                Premium Package
+              </label>
+            </div>
 
+            <button type="submit" onClick={() => Click()}>
+              Submit Form
+            </button>
+          </form>
         </div>
         <div className="footer">
           <h2>Contact Us Today</h2>
-          <p>Ready to elevate your corporate communications with high-quality video content? Get in touch with our team at I Next IT Solutions to discuss your project and get a quote. We look forward to bringing your vision to life!</p>
-          <h5>I Next IT Solutions | Corporate Video | Product Video | Industrial Video |<br />COPYRIGHT <LiaCopyright /> 2024 I Next IT Solutions - All Rights Reserved |<br />+91 9372539572 | info@inextits.in | www.inextits.in |</h5>
+          <p>
+            Ready to elevate your corporate communications with high-quality
+            video content? Get in touch with our team at I Next IT Solutions to
+            discuss your project and get a quote. We look forward to bringing
+            your vision to life!
+          </p>
         </div>
       </div>
-      
     </>
   );
 };
 
 export default PricingCalculator;
-
-
-
- 
